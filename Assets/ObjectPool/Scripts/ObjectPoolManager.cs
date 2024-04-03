@@ -5,10 +5,10 @@ namespace UnityTest.ObjectPool
 {
     public class ObjectPoolManager : MonoBehaviour
     {
-        [SerializeField] private GameObject _prefab;
+        [SerializeField] private ObjectMover _prefab;
         [SerializeField] private int _objectCount;
 
-        private List<GameObject> poolObjects;
+        private List<ObjectMover> poolObjects;
 
         private void Awake()
         {
@@ -17,30 +17,30 @@ namespace UnityTest.ObjectPool
 
         private void InitializePoolObjects()
         {
-            poolObjects = new List<GameObject>();
+            poolObjects = new List<ObjectMover>();
 
             for (int i = 0; i < _objectCount; i++)
             {
-                GameObject obj = Instantiate(_prefab);
-                obj.SetActive(false);
+                ObjectMover obj = Instantiate(_prefab);
+                obj.gameObject.SetActive(false);
                 poolObjects.Add(obj);
             }
         }
 
-        public GameObject GetObjectFromPool()
+        public ObjectMover GetObjectFromPool()
         {
-            foreach (GameObject obj in poolObjects)
+            foreach (ObjectMover obj in poolObjects)
             {
-                if (!obj.activeInHierarchy)
+                if (!obj.gameObject.activeInHierarchy)
                 {
-                    obj.SetActive(true);
+                    obj.gameObject.SetActive(true);
                     return obj;
                 }
             }
 
-            GameObject newGO = Instantiate(_prefab);
-            poolObjects.Add(newGO);
-            return newGO;
+            ObjectMover newObj = Instantiate(_prefab);
+            poolObjects.Add(newObj);
+            return newObj;
         }
 
         public void ReturnObjectToPool(GameObject obj)

@@ -7,11 +7,24 @@ namespace UnityTest.ObjectPool
         [SerializeField] private ObjectPoolManager _poolManager;
         [SerializeField] private Vector3 _spawnVector;
 
-        private void Update() {
+        private IObjectRepository repo;
+
+        private void Awake()
+        {
+            repo = GetComponent<IObjectRepository>();
+        }
+
+        private void Update() 
+        {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                GameObject obj = _poolManager.GetObjectFromPool();
-                obj.GetComponent<ObjectMover>().Initialize(_poolManager);
+                ObjectMover obj = _poolManager.GetObjectFromPool();
+
+                obj.Initialize(
+                    poolManager: _poolManager,
+                    model: repo?.GetRandomObject()
+                );
+
                 obj.transform.position = _spawnVector;
             }
         }
