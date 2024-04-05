@@ -123,6 +123,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &661134878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661134880}
+  - component: {fileID: 661134879}
+  m_Layer: 0
+  m_Name: Database Helper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &661134879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661134878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6217113f5e87264cbdb25eae53e2f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats:
+  - Name: Joni
+    Health: 100
+    Damage: 12
+  - Name: Rock
+    Health: 200
+    Damage: 20
+  - Name: FIre
+    Health: 60
+    Damage: 90
+--- !u!4 &661134880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661134878}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &722767775
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +363,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1433545435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433545437}
+  - component: {fileID: 1433545436}
+  m_Layer: 0
+  m_Name: Local Data Sources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1433545436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433545435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437f655afa73b6b4ca6ed944b849cd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _databaseHelper: {fileID: 661134879}
+--- !u!4 &1433545437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433545435}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760775673
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,16 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c73c9a020545143aa816d0349d2faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitStats:
-  - Name: Anjay
-    Health: 10
-    Damage: 3
-  - Name: Gurinjaay
-    Health: 12
-    Damage: 4
-  - Name: baday
-    Health: 20
-    Damage: 2
+  _localDataSources: {fileID: 1433545436}
 --- !u!4 &1984333145
 Transform:
   m_ObjectHideFlags: 0
@@ -414,5 +504,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 722767778}
   - {fileID: 1179278376}
-  - {fileID: 1984333145}
   - {fileID: 1760775675}
+  - {fileID: 1984333145}
+  - {fileID: 1433545437}
+  - {fileID: 661134880}

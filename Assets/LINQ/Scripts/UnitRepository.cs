@@ -5,11 +5,15 @@ using UnityEngine;
 
 namespace UnityTest.LINQ {
     public class UnityRepository : MonoBehaviour {
-        [SerializeField] private List<Stats> _unitStats = new List<Stats>();
+        [SerializeField] private LocalDataSources _localDataSources;
 
         public List<Unit> GetUnits() {
-            List<Unit> units = _unitStats.Select(x => UnitModel.FromStats(x).ToEntity()).ToList();
-            return units;
+            var result = _localDataSources.GetUnits();
+            return result.Select(model => model.ToEntity()).ToList();
+        }
+
+        public void AddUnit(Unit unit) {
+            _localDataSources.AddUnit(unit.ToModel());
         }
     }
 }

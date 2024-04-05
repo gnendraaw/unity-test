@@ -14,5 +14,21 @@ namespace UnityTest.LINQ {
                 Debug.Log($"Unit Name: {unit.Name}");
             }
         }
+
+        private void Update() {
+            if (Input.GetKeyDown(KeyCode.T)) {
+                CreateRandomUnit();
+            }
+        }
+
+        private void CreateRandomUnit() {
+            Unit unit = new Unit(
+                name: "New Unit",
+                health: 100,
+                damage: 999
+            );
+
+            _repo.AddUnit(unit);
+        }
     }
 }

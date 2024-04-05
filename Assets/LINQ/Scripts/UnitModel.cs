@@ -19,6 +19,14 @@ namespace UnityTest.LINQ {
         );
 
         public Unit ToEntity() => new Unit(Name, Health, Damage);
+
+        public Stats ToStats() {
+            Stats stats = new Stats();
+            stats.Name = Name;
+            stats.Health = Health;
+            stats.Damage = Damage;
+            return stats;
+        }
     }
 
     [Serializable]
