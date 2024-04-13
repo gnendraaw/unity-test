@@ -248,6 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _item: {fileID: 11400000, guid: 2591713a59b4c6445af35ba3bb68415a, type: 2}
   _inventoryHolder: {fileID: 2122332836}
+  _amount: 5
 --- !u!4 &748003693
 Transform:
   m_ObjectHideFlags: 0
@@ -384,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd8570699008f24da2151a2804ccf4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventorySize: 3
+  _inventorySize: 10
 --- !u!4 &2122332837
 Transform:
   m_ObjectHideFlags: 0

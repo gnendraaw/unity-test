@@ -5,6 +5,8 @@ namespace UnityTest.InventorySystem {
         private int stack;
 
         public ItemSO Item => item;
+        public int Stack => stack;
+        public bool IsFull => stack == item.MaxStack;
 
         public InventorySlot(ItemSO item, int amount) {
             this.item = item;
@@ -15,9 +17,18 @@ namespace UnityTest.InventorySystem {
             ClearItem();
         }
 
-        public void AddItem(ItemSO itemToAdd, int amountToAdd) {
+        public void AddItem(ItemSO itemToAdd, int amountToAdd, out int amountRemaining) {
             item = itemToAdd;
-            stack += amountToAdd;
+
+            int spaceLeft = item.MaxStack - stack;
+
+            if (spaceLeft >= amountToAdd) {
+                stack += amountToAdd;
+                amountRemaining = 0;
+            } else {
+                stack = item.MaxStack;
+                amountRemaining = amountToAdd - spaceLeft;
+            }
         }
 
         public void RemoveItem(int amountToRemove) {
@@ -28,7 +39,7 @@ namespace UnityTest.InventorySystem {
 
         public void ClearItem() {
             item = null;
-            stack = -1;
+            stack = 0;
         }
     }
 }

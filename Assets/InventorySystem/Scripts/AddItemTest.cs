@@ -4,6 +4,7 @@ namespace UnityTest.InventorySystem {
     public class AddItemTest : MonoBehaviour {
         [SerializeField] private ItemSO _item;
         [SerializeField] private InventoryHolder _inventoryHolder;
+        [SerializeField] private int _amount;
 
         public void Update() {
             if (Input.GetKeyDown(KeyCode.T)) {
@@ -12,7 +13,7 @@ namespace UnityTest.InventorySystem {
         }
 
         private void AddItem() {
-            _inventoryHolder.AddItem(_item, Random.Range(1, 5));
+            _inventoryHolder.AddItem(_item, _amount);
         }
     }
 }

@@ -1,3 +1,4 @@
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,11 +17,11 @@ namespace UnityTest.InventorySystem {
         }
 
         public void AddItem(ItemSO item, int amount) {
-            for (int i = 0; i < inventorySlots.Count; i++) {
-                if (inventorySlots[i].Item == null) {
-                    inventorySlots[i] = new InventorySlot(item, amount);
-                    return;
-                }
+            // Search for the first slot with the same item & enough stack left or empty slot
+            while (amount > 0) {
+                var targetSlot = inventorySlots.FirstOrDefault(slot => slot.Item == item && !slot.IsFull || slot.Item == null);
+                targetSlot.AddItem(item, amount, out int remainingAmount);
+                amount = remainingAmount;
             }
         }
     }
