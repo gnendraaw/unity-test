@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90a4abf18c78a74db55505bac229676, type: 3}
+  m_Name: Riffle
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1124863809552611864, guid: 607813ee47e4b5f48881d8394e048d3b, type: 3}
+  Name: Riffle
+  Description: Shoot Burst of Bullets
+  Sprite: {fileID: -9095717837082945937, guid: 16a38cacec1da7f4fa0a5e553ba9e037, type: 3}
+  Damage: 10
+  Ammo: 25
+  ShootingInterval: 0.25
