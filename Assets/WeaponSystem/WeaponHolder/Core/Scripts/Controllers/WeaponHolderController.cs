@@ -5,7 +5,7 @@ namespace UnityTest.WeaponSystem {
     public class WeaponHolderController : MonoBehaviour {
         public static event Action<Weapon> OnWeaponChanged;
 
-        [SerializeField] private Transform _weaponPrefab;
+        [SerializeField] private Transform _weaponParent;
 
         private Weapon currentWeapon;
 
@@ -20,18 +20,11 @@ namespace UnityTest.WeaponSystem {
         }
 
         public void SetWeapon(WeaponSO so) {
-            if (_weaponPrefab.childCount > 0) {
-                Destroy(_weaponPrefab.GetChild(0).gameObject);
-            }
-            currentWeapon = Instantiate(so.Prefab, _weaponPrefab);
-            currentWeapon.Initialize(so);
-            currentWeapon.transform.localPosition = Vector3.zero;
-
-            BroadcastSelectedWeaponChanged();
+            currentWeapon = WeaponFactory.CreateWeapon(so, _weaponParent);
         }
 
         private void BroadcastSelectedWeaponChanged() {
-
+            OnWeaponChanged?.Invoke(currentWeapon);
         }
     }
 }
