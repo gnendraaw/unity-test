@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577bfd66d28356c4e8c814fc31583f69, type: 3}
+  m_Name: Riffle
+  m_EditorClassIdentifier: 
+  Name: Riffle
+  Prefab: {fileID: -7324428604267309470, guid: bd40551718b935c4c9884c80287c839a, type: 3}
+  Damage: 12
+  Ammo: 30
