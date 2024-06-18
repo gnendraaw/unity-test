@@ -15,6 +15,7 @@ namespace Strategy {
         private void Update() {
             HandleMovement();
             HandleAttack();
+            HandleRotation();
         }
 
         private void HandleMovement() {
@@ -35,8 +36,15 @@ namespace Strategy {
             }
 
             if (Input.GetKeyDown(KeyCode.Space)) {
-                _attackStrategy.Attack(_bulletParent, _bulletSpawnPos.position);
+                _attackStrategy.Attack(transform, _bulletSpawnPos.position);
             }
+        }
+
+        private void HandleRotation() {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direction = mousePosition - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
 
         public void SetStrategy(IMovementStrategy strategy) {

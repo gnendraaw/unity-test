@@ -531,8 +531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
-  _bulletParent: {fileID: 0}
-  _bulletSpawnPos: {fileID: 0}
+  _bulletParent: {fileID: 47288755}
+  _bulletSpawnPos: {fileID: 1199253726}
 --- !u!4 &1914601382
 Transform:
   m_ObjectHideFlags: 0

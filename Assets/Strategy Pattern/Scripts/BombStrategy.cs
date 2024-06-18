@@ -9,9 +9,7 @@ namespace Strategy {
         }
 
         public void Attack(Transform parent, Vector3 position) {
-            GameObject instance = Object.Instantiate(bullet, parent);
-            instance.transform.position = position;
-            instance.transform.rotation = parent.rotation;
+            GameObject instance = Object.Instantiate(bullet, position, parent.rotation);
         }
     }
 }
