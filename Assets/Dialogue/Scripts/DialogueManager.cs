@@ -17,10 +17,8 @@ namespace Learning.Dialogue {
         private bool isDialogueActive;
 
         public void StartDialogue(List<DialogueLine> lines, List<DialogueActor> actors) {
-            _lines.Clear();
-
-            _lines = lines;
-            _actors = actors;
+            _lines = new List<DialogueLine>(lines);
+            _actors = new List<DialogueActor>(actors);
             _lineIndex = -1;
             isDialogueActive = true;
             _animator.SetBool("isActive", isDialogueActive);

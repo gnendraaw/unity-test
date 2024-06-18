@@ -357,6 +357,7 @@ MonoBehaviour:
   _messageText: {fileID: 1412442254}
   _nameText: {fileID: 1927820565}
   _icon: {fileID: 830735109}
+  _animator: {fileID: 2095948290}
 --- !u!4 &85407303
 Transform:
   m_ObjectHideFlags: 0
