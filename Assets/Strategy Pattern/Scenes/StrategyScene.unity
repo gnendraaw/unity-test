@@ -714,11 +714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823cea082c8ee0a4aa3d7cfdf5d2b9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBallPrefab: {fileID: 7513533930182674731, guid: b84193ebc0450914d8f142543a578d4b, type: 3}
-  fireballDuration: 1
-  healPrefab: {fileID: 0}
-  addHealthAmount: 2
-  healDuration: 1
+  fireballStrategy: {fileID: 11400000, guid: 80a5e60ee65d30a48bc65e67625a7d50, type: 2}
+  healStrategy: {fileID: 11400000, guid: a4ad5c955e900e44d80b1a6786a4f790, type: 2}
   maxHealth: 10
 --- !u!4 &1458940678
 Transform:
