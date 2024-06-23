@@ -11,22 +11,15 @@ namespace Playground.Shmup {
         [SerializeField] private float minY = -5f;
         [SerializeField] private float maxY = 5f;
 
-        private void Update() => HandleMovement();
-
-        private void HandleMovement() {
-            Vector3 targetPosition = CalculateTargetPosition(GetMoveDirection());
-            MovePosition(ClampPosition(targetPosition));
-        }
-
-        private void MovePosition(Vector3 position) => transform.position = position;
+        private void Update() => MovePosition(GetMoveDirection());
+        private void MovePosition(Vector3 direction) => transform.position = ClampPosition(CalculateTargetPosition(direction));
+        private Vector3 GetMoveDirection() => new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        private Vector3 CalculateTargetPosition(Vector3 direction) => transform.position + direction * moveSpeed * Time.deltaTime;
 
         private Vector3 ClampPosition(Vector3 position) {
             position.x = Mathf.Clamp(position.x,  minX, maxX);
             position.y = Mathf.Clamp(position.y, minY, maxY);
             return position;
         }        
-
-        private Vector3 GetMoveDirection() => new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        private Vector3 CalculateTargetPosition(Vector3 direction) => transform.position + direction * moveSpeed * Time.deltaTime;
     }
 }
