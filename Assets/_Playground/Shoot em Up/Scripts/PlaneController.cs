@@ -11,9 +11,9 @@ namespace Playground.Shmup {
         [SerializeField] private float minY = -5f;
         [SerializeField] private float maxY = 5f;
 
-        private void Update() => MovePosition(GetMoveDirection());
+        private void OnEnable() => InputReader.onMove += MovePosition;
+        private void OnDisable() => InputReader.onMove -= MovePosition;
         private void MovePosition(Vector3 direction) => transform.position = ClampPosition(CalculateTargetPosition(direction));
-        private Vector3 GetMoveDirection() => new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         private Vector3 CalculateTargetPosition(Vector3 direction) => transform.position + direction * moveSpeed * Time.deltaTime;
 
         private Vector3 ClampPosition(Vector3 position) {
