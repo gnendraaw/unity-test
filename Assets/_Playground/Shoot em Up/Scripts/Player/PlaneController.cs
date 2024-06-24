@@ -13,7 +13,12 @@ namespace Playground.Shmup {
 
         private void OnEnable() => InputReader.onMove += MovePosition;
         private void OnDisable() => InputReader.onMove -= MovePosition;
-        private void MovePosition(Vector3 direction) => transform.position = ClampPosition(CalculateTargetPosition(direction));
+        private void MovePosition(Vector3 direction)
+        {
+            if (GameManager.Instance.IsGameOver()) return;
+            transform.position = ClampPosition(CalculateTargetPosition(direction));
+        }
+
         private Vector3 CalculateTargetPosition(Vector3 direction) => transform.position + direction * moveSpeed * Time.deltaTime;
 
         private Vector3 ClampPosition(Vector3 position) {

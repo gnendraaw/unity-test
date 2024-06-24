@@ -6,6 +6,7 @@ namespace Playground.Shmup
         [SerializeField] protected int maxHealth;
 
         protected int health;
+        public int Health => health;
 
         protected virtual void Awake() => health = maxHealth;
 
