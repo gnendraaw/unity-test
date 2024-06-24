@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Playground/Shoot em Up/Scenes/ShmupMainMenuScene.unity
+    guid: 523d8a6156d7fe64fad0ff270ed36601
+  - enabled: 1
+    path: Assets/_Playground/Shoot em Up/Scenes/ShmupLevel1Scene.unity
+    guid: 7813ea68862c68f4aa5c988ade722483
+  - enabled: 1
+    path: Assets/_Playground/Shoot em Up/Scenes/ShmupLoadingScene.unity
+    guid: 7a6a4ae5d52d28e46a889eea55df803a
   m_configObjects: {}

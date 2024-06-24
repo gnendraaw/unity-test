@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Singleshot_Orange
   m_EditorClassIdentifier: 
   damage: 10
-  fireRate: 0.5
+  fireRate: 0.05
   projectileSpeed: 10
   projectileLifetime: 4
   projectilePrefab: {fileID: 535314090534221357, guid: 163b2d032307f8743b82a8b93b1fa531, type: 3}
