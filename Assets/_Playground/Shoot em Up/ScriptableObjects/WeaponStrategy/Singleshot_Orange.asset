@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64237aa1d18948a40831d0e02352a211, type: 3}
+  m_Name: Singleshot_Orange
+  m_EditorClassIdentifier: 
+  damage: 10
+  fireRate: 0.5
+  projectileSpeed: 10
+  projectileLifetime: 4
+  projectilePrefab: {fileID: 535314090534221357, guid: 163b2d032307f8743b82a8b93b1fa531, type: 3}

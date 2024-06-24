@@ -22,7 +22,7 @@ namespace Playground.Shmup
             spawnTimer += Time.deltaTime;
 
             if (enemiesSpawned < maxEnemies && spawnTimer >= spawnInterval) {
-                spawnTimer = 0f;
+                spawnTimer = 0f; // Resets timer
                 SpawnEnemy();
             }
         }
