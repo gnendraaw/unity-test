@@ -6,9 +6,11 @@ namespace Playground.Shmup
         [SerializeField] private float speed;
 
         private Transform parent;
+        private int damage;
 
         public void SetSpeed(float speed) => this.speed = speed;
         public void SetParent(Transform parent) => this.parent = parent;
+        public void SetDamage (int damage) => this.damage = damage;
 
         private void Update() {
             transform.SetParent(null);
@@ -16,7 +18,10 @@ namespace Playground.Shmup
         }
 
         private void OnCollisionEnter2D(Collision2D col) {
-            // Destroy projectile
+            if (col.gameObject.TryGetComponent(out Plane plane)){ 
+                plane.TakeDamage(damage); // Update this
+            }
+
             Destroy(gameObject);
         }
     }

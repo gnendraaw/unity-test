@@ -11,6 +11,7 @@ namespace Playground.Shmup
 
             var projectileComponent = projectile.GetComponent<Projectile>();
             projectileComponent.SetSpeed(projectileSpeed);
+            projectileComponent.SetDamage(Damage);
 
             Destroy(projectile, projectileLifetime);
         }

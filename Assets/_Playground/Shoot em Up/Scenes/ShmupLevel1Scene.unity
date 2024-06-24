@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 750322355}
   - component: {fileID: 750322354}
   - component: {fileID: 750322356}
+  - component: {fileID: 750322357}
   m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
@@ -350,6 +351,19 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &750322357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750322351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da2a1db52435ba4faac496b379e73a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
 --- !u!1 &902172595
 GameObject:
   m_ObjectHideFlags: 0
