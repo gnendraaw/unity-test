@@ -40,5 +40,9 @@ namespace Playground.Shmup
 
             enemiesSpawned++;
         }
+
+        public void DecreaseEnemiesSpawned(int count) {
+            enemiesSpawned -= count;
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace Playground.Shmup
             // TODO: Destroy enemy object
             Destroy(gameObject);
             // TODO: Decrease enemy count in game manager
-            // TODO: Increase game score by certain amount
+            GameManager.Instance.HandleEnemyDead(score: 10, deadCount: 1); // Update this argument. Currently hardcoded
         }
     }
 }
